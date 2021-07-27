@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthorizationService {
 
-  authenticate_url="http://localhost:9095"
+  authenticate_url="http://localhost:8084/authorization"
 
   constructor(private http:HttpClient) {  }
 
@@ -16,7 +16,7 @@ export class AuthorizationService {
   //login user
   loginUser(token: string,userId : string){
     localStorage.setItem("token",token);
-    localStorage.setItem("userId",userId);
+    
     return true;
   }
   isLoggedIn(){

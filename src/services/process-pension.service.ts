@@ -6,10 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ProcessPensionService {
 
-  pension_details_URL="http://localhost:9090"
+
+  pension_details_URL="http://localhost:8000/process-pension"
   constructor(private http:HttpClient) { }
   PensionDetails(PensionerDetail : any){
-    var final_url=this.pension_details_URL+"/ProcessPension";
+    var final_url=this.pension_details_URL+"/PensionDetail";
     return this.http.post(final_url,PensionerDetail);
   }
 }

@@ -15,7 +15,7 @@ export class DdashboardComponent implements OnInit {
   ProcessPensionInput={
     aadhaarNumber :'', 
     pensionAmount:'',
-    bankServiceCharge:''
+    bankCharge:''
   }
   //ProcessCode : any
   constructor(private pension_disbursement:PensionDisbursementService) {
@@ -25,7 +25,7 @@ export class DdashboardComponent implements OnInit {
     this.pensionerDetails=this.pension_disbursement.getPensionerDetails();
     this.ProcessPensionInput.aadhaarNumber=this.pensionerDetails.aadhaarNumber;
     this.ProcessPensionInput.pensionAmount=this.pensionerDetails.pensionAmount;
-    this.ProcessPensionInput.bankServiceCharge=this.pensionerDetails.bankServiceCharge;
+    this.ProcessPensionInput.bankCharge=this.pensionerDetails.bankCharge;
     this.bankName=this.pensionerDetails.bankName;
   }
   /*

@@ -9,9 +9,9 @@ import { AuthorizationService } from 'src/services/authorization.service';
 export class AuthorizationComponent implements OnInit {
 
   credentials={
-    userid:"" ,
-    upassword:"",
-    uname:""  
+    
+    password:"",
+    userName:""  
   }
   
   constructor(private loginService:AuthorizationService) { }
@@ -21,16 +21,16 @@ export class AuthorizationComponent implements OnInit {
 
   onSubmit(){
     console.log("form submitted");
-    if((this.credentials.userid!='' && this.credentials.uname!='' && this.credentials.upassword!='') && 
-    (this.credentials.userid!=null && this.credentials.uname!=null && this.credentials.upassword!=null)){
+    if((this.credentials.userName!='' && this.credentials.password!='') && 
+    (this.credentials.userName!=null && this.credentials.password!=null)){
       this.loginService.generateToken(this.credentials).subscribe(
         (response: any)=>{
           console.log("success");
           console.log(response);
           console.log(response.authToken);
-          console.log(response.userid);
+          
           this.loginService.loginUser(response.authToken,response.userid);
-          window.location.href="/pensionDetails";
+          window.location.href="/pensiondetails";
         },
         error =>{
           console.log("error");

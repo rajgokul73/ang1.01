@@ -8,12 +8,12 @@ import { ProcessPensionComponent } from './process-pension/process-pension.compo
 
 const routes: Routes = [
   {
-    path:"login",
+    path:"",
     component: AuthorizationComponent,
     pathMatch:"full"
   },
   {
-    path:"pensionDetails",
+    path:"pensiondetails",
     component: PensionerDetailComponent,
     pathMatch:"full",
     canActivate:[AuthGuard],

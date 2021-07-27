@@ -13,11 +13,11 @@ import { Router } from '@angular/router';
 export class PensionerDetailComponent implements OnInit {
 
    pensionDetails={
-    name:'',
-	  dateOfBirth:'',
-	  panNumber:'',
-	 typeOfPension: '',
-	 aadhaarNumber:'',
+    pensionerName:'',
+	  pensionerDob:'',
+	  pan:'',
+	 pensionType: '',
+	 aadharNumber:'',
   }
   updatedPensionerDetails:any
   constructor(private router:Router,private pensionerDetailService:PensionerDetailService,private pensionDisbursementService:PensionDisbursementService) { }
@@ -27,11 +27,11 @@ export class PensionerDetailComponent implements OnInit {
   }
   onSubmit(){
     var params =new HttpParams()
-    .set('name',this.pensionDetails.name.toString())
-    .set('dob',this.pensionDetails.dateOfBirth)
-    .set('pan',this.pensionDetails.panNumber)
-    .set('aadhaar',this.pensionDetails.aadhaarNumber)
-    .set('type',this.pensionDetails.typeOfPension)
+    .set('pensionerName',this.pensionDetails.pensionerName.toString())
+    .set('pensionerDob',this.pensionDetails.pensionerDob)
+    .set('pan',this.pensionDetails.pan)
+    .set('aadharNumber',this.pensionDetails.aadharNumber)
+    .set('pensionType',this.pensionDetails.pensionType)
     var Get_URL=params.toString();
     console.log(Get_URL)
 

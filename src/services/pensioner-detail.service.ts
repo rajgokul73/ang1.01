@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class PensionerDetailService {
 
-  pension_details_URL="http://localhost:9090"
+  pension_details_URL="http://localhost:8100/PensionerDetailByAadhaar"
   constructor(private http:HttpClient) { }
   PensionDetails(Get_url : string){
-    var final_url=this.pension_details_URL+"/PensionDetail?"+Get_url;
+    var final_url=this.pension_details_URL+"/"+Get_url;
     return this.http.get(final_url);
   }
   
