@@ -6,10 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class PensionDisbursementService {
 
-  pension_disbursement_URL="http://localhost:8200/pension-disbursement-service"
+  pension_disbursement_URL="http://localhost:8000/process-pension"
   constructor(private http:HttpClient) { }
   processPension(ProcessPensionInput : any){
-    return this.http.post(`${this.pension_disbursement_URL}/disbursepension`,ProcessPensionInput);
+    return this.http.post(`${this.pension_disbursement_URL}/ProcessPension`,ProcessPensionInput);
   }
   //getBankServiceCharge(bankName : string){
    // return this.http.post(`${this.pension_disbursement_URL}/getServiceCharge`,bankName);
